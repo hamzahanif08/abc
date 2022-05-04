@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<table class="table table-hover table-black">
+	  <thead>
+	    <tr>
+	      <th scope="col">ID</th>
+	      <th scope="col">Student Name</th>
+	      <th scope="col">Registration Number</th>
+	      <th scope="col">Email</th>
+	      <th scope="col">Class Batch</th>
+	      <th scope="col">Password</th>
+	      <th scope="col">Confirm Ppassword</th>
+	    </tr>
+	  </thead>
+        <tbody>
+            {% for a in data %}
+            <tr>
+            	<td>{{ a[0] }}</td>
+                <td>{{ a[1] }}</td>
+                <td>{{ a[2] }}</td>
+                <td>{{ a[3] }}</td>
+                <td>{{ a[4] }}</td>
+                <td>{{ a[5] }}</td>
+                <td>{{ a[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

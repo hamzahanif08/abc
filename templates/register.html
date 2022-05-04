@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> hello</title>
+</head>
+<body>
+	<div class="table-responsive">
+    <table class="table table-sm table-borderless mb-0">
+        <thead class="thead-dark">
+            <tr>
+		      <th scope="col">ID</th>
+		      <th scope="col">Student Name</th>
+		      <th scope="col">Registration Number</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Class Batch</th>
+		      <th scope="col">Password</th>
+		      <th scope="col">Confirm Ppassword</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in d %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ c.student_name }}</td>
+                <td>{{ c.registration_number }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.class_bach }}</td>
+                <td>{{ c.password }}</td>
+                <td>{{ c.confirm_password }}</td>
+                <tbody><br>
+					<td width="130">
+			        	<a href="{{ url_for( 'update_student', num=c[0] ) }}" class="btn btn-success">Update</a>
+			       		<a href="{{ url_for( 'delete_student', num=c[0] ) }}" class="btn btn-danger">Delete</a>
+		        	</td>
+	        	</tbody>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
